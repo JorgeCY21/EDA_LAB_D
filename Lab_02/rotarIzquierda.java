@@ -1,16 +1,21 @@
-import java.util.*;
-public class rotaIzquierda {
-    public static void main (String args[]){
+public class rotarIzquierda {
+	public static void main(String args[]) {
 
-    
+		int array[] = { 1, 2, 3, 4, 5, 6 };
+		int aux[] = rotarIzquierdaArray(array, 3);
 
-    public static int[] rotarIzquierdaArray(int[] A, int d){
-    /** */
-    //Procedimiento para rotar la matriz
-    /** */
-    
+		for (int i = 0; i < aux.length; i++) {
+			System.out.print(aux[i] + " ");
+		}
+	}
 
-    return Aiz;
-    }
+	public static int[] rotarIzquierdaArray(int[] array, int idx) {
+	    int[] aux = new int[array.length];
 
+	    for (int i = 0; i < aux.length; i++) {
+	        aux[i] = array[(i + idx) % array.length];
+	    }
+
+	    return aux;
+	}
 }
