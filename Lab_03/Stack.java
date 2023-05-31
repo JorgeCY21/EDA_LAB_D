@@ -11,5 +11,14 @@ public class Stack <T>{
         return size == 0;
     }
 
+    public void push(T data){
+        Node <T> nuevoNodo = new Node<>(data);
+        if(empty()){
+            arriba = nuevoNodo;
+        }else{
+            arriba = setNode(arriba);
+            size++;
+        }        
+    }
     
 }
