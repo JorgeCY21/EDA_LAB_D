@@ -20,5 +20,11 @@ public class Stack <T>{
             size++;
         }        
     }
+    public T peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return top.getData();
+    }
     
 }
