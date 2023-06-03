@@ -1,5 +1,5 @@
 
-public class Queue<E> implements QueueList {
+public class Queue<E> implements QueueList<E> {
 
 	private Node<E> head;
 	private Node<E> tail;
@@ -11,32 +11,47 @@ public class Queue<E> implements QueueList {
 		this.count = 0;
 	}
 
-    public boolean add(Object e) {
+	private boolean isEmpty() {
+		return count == 0;
+	}
+
+	public boolean add(E e) {
+		Node<E> newNode = new Node<>(e);
+
+		if (isEmpty()) {
+			this.head = newNode;
+			this.tail = newNode;
+		}
+		else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+		}
+
+		count++;
+		return true;
+	}
+
+    public E element() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public boolean offer(E e) {
         // TODO Auto-generated method stub
         return false;
     }
 
-    public Object element() {
+    public E peek() {
         // TODO Auto-generated method stub
         return null;
     }
 
-    public boolean offer(Object e) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    public Object peek() {
+    public E poll() {
         // TODO Auto-generated method stub
         return null;
     }
 
-    public Object poll() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public Object remove() {
+    public E remove() {
         // TODO Auto-generated method stub
         return null;
     }
