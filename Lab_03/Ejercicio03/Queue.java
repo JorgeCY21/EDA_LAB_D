@@ -15,7 +15,7 @@ public class Queue<E> implements QueueList<E> {
 	}
 
 	private boolean isEmpty() {
-		return count == 0;
+		return this.count == 0;
 	}
 
 	public boolean add(E e) throws NullPointerException {
@@ -33,7 +33,7 @@ public class Queue<E> implements QueueList<E> {
 			this.tail = newNode;
 		}
 
-		count++;
+		this.count++;
 		return true;
 	}
 
@@ -42,7 +42,7 @@ public class Queue<E> implements QueueList<E> {
 			throw new NoSuchElementException("La cola está vacía");
 		}
 
-		return head.getData();
+		return this.head.getData();
 	}
 
 	public boolean offer(E e) {
@@ -53,10 +53,13 @@ public class Queue<E> implements QueueList<E> {
 		}
 	}
 
-    public E peek() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	public E peek() {
+		if (this.isEmpty()) {
+			return null;
+		}
+
+		return this.head.getData();
+	}
 
     public E poll() {
         // TODO Auto-generated method stub
