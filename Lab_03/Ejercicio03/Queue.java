@@ -1,6 +1,16 @@
 
 public class Queue<E> implements QueueList {
 
+	private Node<E> head;
+	private Node<E> tail;
+	private int count;
+
+	public Queue() {
+		this.head = null;
+		this.tail = null;
+		this.count = 0;
+	}
+
     public boolean add(Object e) {
         // TODO Auto-generated method stub
         return false;
