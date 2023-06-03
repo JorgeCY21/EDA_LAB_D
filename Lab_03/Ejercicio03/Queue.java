@@ -92,4 +92,24 @@ public class Queue<E> implements QueueList<E> {
 
 		return data;
 	}
+
+    @Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("[");
+
+		Node<E> aux = this.head;
+
+		while (aux != null) {
+			sb.append(aux.toString());
+			aux = aux.getNext();
+
+			if (aux != null) {
+				sb.append(", ");
+			}
+		}
+
+		sb.append("]");
+
+		return sb.toString();
+	}
 }
