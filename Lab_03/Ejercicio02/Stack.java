@@ -16,7 +16,7 @@ public class Stack <T>{
         if(empty()){
             arriba = nuevoNodo;
         }else{
-            nuevoNodo.setNode((T) arriba);
+            nuevoNodo.setNextNode(arriba);
             arriba = nuevoNodo;
 
         }
