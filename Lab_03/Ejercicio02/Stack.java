@@ -37,5 +37,20 @@ public class Stack <T>{
         size--;
         return data;
     }
+     //Devuelve la posición basada en 1 donde se encuentra un objeto en esta pila.
+     public int search(T element) {
+        Node<T> currentNode = top;
+        int index = 1;
     
+        while (currentNode != null) {
+            if (currentNode.getData().equals(element)) {
+                return index;
+            }
+    
+            currentNode = currentNode.getNextNode();
+            index++;
+        }
+    
+        return -1;  // El elemento no se encuentra en la pila
+    }
 }
