@@ -1,18 +1,19 @@
 
 import myExceptions.NoSuchElementException;
+import myExceptions.NullPointerException;
 
 public interface QueueList<E> {
 
-    boolean add(E e);
+	boolean add(E e) throws NullPointerException;
 
-    E element() throws NoSuchElementException;
+	E element() throws NoSuchElementException;
 
-    boolean offer(E e);
+	boolean offer(E e);
 
-    E peek();
+	E peek();
 
-    E poll();
+	E poll();
 
-    E remove();
+	E remove();
 
 }
