@@ -25,7 +25,7 @@ public class Queue<E> implements QueueList<E> {
 
 		Node<E> newNode = new Node<>(e);
 
-		if (isEmpty()) {
+		if (this.isEmpty()) {
 			this.head = newNode;
 			this.tail = newNode;
 		} else {
@@ -38,7 +38,7 @@ public class Queue<E> implements QueueList<E> {
 	}
 
 	public E element() throws NoSuchElementException {
-		if (isEmpty()) {
+		if (this.isEmpty()) {
 			throw new NoSuchElementException("La cola está vacía");
 		}
 
@@ -62,9 +62,20 @@ public class Queue<E> implements QueueList<E> {
 	}
 
     public E poll() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+		if (this.isEmpty()) {
+			return null;
+		}
+
+		E data = this.head.getData();
+		this.head = this.head.getNext();
+		this.count--;
+
+		if (this.isEmpty()) {
+			this.tail = null;
+		}
+
+		return data;
+	}
 
     public E remove() {
         // TODO Auto-generated method stub
