@@ -23,6 +23,18 @@ public class Ejercicio01 {
 		return menor;
 		
 	}
+	
+	public static int[] cortar(int[] pila, int cantidad) {
+		int suma = 0;
+		int indice = 0;
+
+		while (suma < cantidad && indice < pila.length) {
+			suma += pila[indice];
+			indice++;
+		}
+
+		return Arrays.copyOfRange(pila, 0, indice);
+	}
 
 	public static boolean esQuitarExacto(int[] pila, int menor) {
 		int suma = 0;
