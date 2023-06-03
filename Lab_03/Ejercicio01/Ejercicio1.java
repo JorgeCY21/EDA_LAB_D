@@ -23,7 +23,7 @@ public class Ejercicio01 {
 		return menor;
 		
 	}
-	
+
 	public static int[] cortar(int[] pila, int cantidad) {
 		int suma = 0;
 		int indice = 0;
@@ -75,5 +75,13 @@ public class Ejercicio01 {
 			menor = suma3;
 
 		return menor;
+	}
+
+	public static void imprimirPila(int[] pila) {
+		System.out.print("[");
+		for (int num : pila) {
+			System.out.print(num + " ");
+		}
+		System.out.println("]");
 	}
 }
