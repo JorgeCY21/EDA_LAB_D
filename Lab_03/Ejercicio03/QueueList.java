@@ -14,6 +14,6 @@ public interface QueueList<E> {
 
 	E poll();
 
-	E remove();
+	E remove() throws NoSuchElementException;
 
 }

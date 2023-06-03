@@ -77,9 +77,19 @@ public class Queue<E> implements QueueList<E> {
 		return data;
 	}
 
-    public E remove() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    public E remove() throws NoSuchElementException {
+		if (this.isEmpty()) {
+			throw new NoSuchElementException("La cola está vacía");
+		}
 
+		E data = this.head.getData();
+		this.head = this.head.getNext();
+		this.count--;
+
+		if (this.isEmpty()) {
+			this.tail = null;
+		}
+
+		return data;
+	}
 }
