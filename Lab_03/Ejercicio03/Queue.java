@@ -20,7 +20,7 @@ public class Queue<E> implements QueueList<E> {
 
 	public boolean add(E e) throws NullPointerException {
 		if (e == null) {
-			throw new NullPointerException("");
+			throw new NullPointerException("El elemento que quiere ingresar es null");
 		}
 
 		Node<E> newNode = new Node<>(e);
