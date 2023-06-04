@@ -13,9 +13,9 @@ public class TestQueue {
             System.out.println("Cola: " + queue);
 
             // añadir elementos con offer()
-            queue.add(40);
-            queue.add(50);
-            queue.add(60);
+            queue.offer(40);
+            queue.offer(50);
+            queue.offer(60);
 
             // imprimir la cola
             System.out.println("Cola: " + queue);
