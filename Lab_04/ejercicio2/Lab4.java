@@ -1,13 +1,23 @@
+package lab4;
+
 import java.util.Scanner;
 
-public class ordenamiento {
+public class Lab4 {
     public static void main(String[] args) {
         int tamano;
         Scanner teclado = new Scanner( System.in );
         System.out.print( "Introduzca el tamaño del arreglo: " );
-        tamano = teclado.nextInt();
+       // tamano = teclado.nextInt();
         //int arreglo[] = generarPeorCaso(tamano);
+        
+        DobleList <Integer> listDoble = new DobleList<>();
+        listDoble.insertAlInicio(1);
+        listDoble.insertAlInicio(2);
+        System.out.println(listDoble.toString());
+        
         }
+    
+        
         //Modificación del algoritmo de inserción para devolver tiempo de ejecición:
         public static long insertionSort(int[] A) {
         int key;
@@ -29,3 +39,4 @@ public class ordenamiento {
         }
 
 }
+
