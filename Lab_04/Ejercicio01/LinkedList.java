@@ -1,4 +1,3 @@
-
 public class LinkedList<T extends Comparable<T>> {
 	private Node<T> raiz;
 	private int tamano;
