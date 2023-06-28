@@ -1,0 +1,316 @@
+%package list
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+	literate={├}{|}1 {─}{--}1 {└}{+}1 
+}
+\lstset{basicstyle=\ttfamily\fontfamily{Consolas}\selectfont,
+	showstringspaces=false,
+	commentstyle=\color{red},
+	keywordstyle=\color{blue},
+	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1 {¡}{{!`}}1 {¿}{{?`}}1
+}
+
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{Valdivia Luna Carlo}
+\newcommand{\itemStudent}{Condorios Yllapuma Jorge Cusilayme García Jose Mamani Mamani Alexis }
+\newcommand{\itemCourse}{Estructura de Datos}
+\newcommand{\itemCourseCode}{1702124}
+\newcommand{\itemSemester}{III}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - A}
+\newcommand{\itemInput}{Del 19 Junio 2023}
+\newcommand{\itemOutput}{Al 26 Junio 2023}
+\newcommand{\itemPracticeNumber}{05}
+\newcommand{\itemTheme}{Arbol AVL}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage{csquotes}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Grupo 03}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+	
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			\\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiantes} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	
+	\section{Tarea}
+	\begin{itemize}
+		\item Elabore un informe implementando Árboles AVL con toda la lista de operaciones search(), getMin(), getMax(), parent(), son(), insert(), remove(). 
+		\item INPUT: Una sóla palabra en mayúsculas. 
+		\item OUTPUT: Se debe contruir el árbol AVL considerando el valor decimal de su código ascii. 
+		\item Luego, pruebe todas sus operaciones implementadas. 
+		\item Estudie la librería Graph Stream para obtener una salida gráfica de su implementación. Utilice todas las recomendaciones dadas por el docente.
+	\end{itemize}
+	
+	
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Windows 10 Home Single Language 64 bits (10.0, compilación 19045)
+		\item VIM 9.0.
+		\item Git 2.40.1.
+		\item Cuenta en GitHub con el correo institucional.
+		\item Java
+	\end{itemize}
+	
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+		\item URL del Repositorio GitHub para clonar o recuperar.
+		\item \url{https://github.com/JorgeCY21/EDA_LAB_D}
+		\item URL para el laboratorio 04 en el Repositorio GitHub.
+		\item \url{https://github.com/JorgeCY21/EDA_LAB_D/tree/main/Lab_05}
+	\end{itemize}
+	
+	
+	%explicación del trabajo
+	\section{Resolucion del ejercicio propuesto}	
+	
+	\subsection{Ejercicio 1}
+	
+	\begin{itemize}
+		\item Utilizar el tipo generico de NodeAvl.
+	\end{itemize}
+	
+	\lstinputlisting[language=java, caption={Node.java},numbers=left,]{src/Ejercicio01/NodeAvl.java}
+	
+	\begin{itemize}
+		\item La clase NodeAvl tiene un atributo data que representa los datos almacenados en el nodo.
+		\item También tiene atributos left y right que representan los nodos hijos izquierdo y derecho, respectivamente.
+		\item El atributo height almacena la altura del nodo en el árbol AVL.
+		\item El constructor de la clase NodeAvl toma un parámetro data y lo asigna al atributo correspondiente, estableciendo la altura inicial en 1.
+		
+		\textbf{Métodos:}
+
+		\begin{itemize}
+			\item \textbf{getData():} Devuelve el dato almacenado en el nodo.
+			\item \textbf{getLeft():} Devuelve el nodo hijo izquierdo.
+			\item \textbf{getRight():} Devuelve el nodo hijo derecho.
+		\end{itemize}
+		
+		\item En resumen, la clase NodeAvl representa un nodo en un árbol AVL y proporciona métodos para acceder a sus datos y nodos hijos. Este código puede ser utilizado en la implementación de un árbol AVL para realizar operaciones de inserción, eliminación y búsqueda de manera eficiente.
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Se utiliza el NodeAvl en la implementación de la clase TreeAVL.
+	\end{itemize}
+
+	\lstinputlisting[language=java, caption={LinkedList.java},numbers=left,]{src/Ejercicio01/TreeAVL.java}
+	
+	\begin{itemize}
+
+		\item La clase TreeAVL representa un árbol AVL y proporciona métodos para insertar, eliminar y buscar elementos en el árbol. Aquí está una descripción del código en tercera persona:
+		\item La clase TreeAVL tiene un atributo privado root que representa el nodo raíz del árbol AVL.
+		\textbf{Métodos:}
+
+		\begin{itemize}
+			\item \textbf{insert(E data):} Inserta un elemento en el árbol AVL. Este método llama al método privado insertNode para realizar la inserción.
+			\item \textbf{insertNode(NodeAvl <E> node, E data):} Método privado que realiza la inserción de un nodo en el árbol AVL. Recibe un nodo y un dato a insertar. Si el nodo es nulo, crea un nuevo nodo con el dato. Luego, compara el dato con el dato del nodo actual y decide si debe insertarse en el subárbol izquierdo o derecho. Después de la inserción, se actualiza la altura del nodo y se realiza el equilibrado del árbol si es necesario, utilizando las rotaciones adecuadas.
+			\item \textbf{remove(E data):} Elimina un elemento del árbol AVL. Este método llama al método privado removeNode para realizar la eliminación.
+			\item \textbf{removeNode(NodeAvl<E> node, E data):} Método privado que realiza la eliminación de un nodo del árbol AVL. Recibe un nodo y el dato a eliminar. Si el nodo es nulo, retorna el mismo nodo. Luego, compara el dato con el dato del nodo actual y decide si debe eliminarlo del subárbol izquierdo o derecho. Dependiendo de la situación, se manejan diferentes casos para garantizar la conservación de las propiedades del árbol AVL. Se actualiza la altura del nodo y se realiza el equilibrado si es necesario.
+			\item \textbf{getMin():} Devuelve el elemento mínimo (el menor) en el árbol AVL. Utiliza el método privado getMinNode para encontrar el nodo mínimo y devuelve el dato contenido en él.
+			\item \textbf{getMinNode(NodeAvl<E> node):} Método privado que encuentra el nodo mínimo en el árbol AVL. Recibe un nodo y realiza un recorrido hacia la izquierda hasta encontrar el nodo más a la izquierda del subárbol.
+			\item \textbf{getMax():} Devuelve el elemento máximo (el mayor) en el árbol AVL. Utiliza el método privado getMaxNode para encontrar el nodo máximo y devuelve el dato contenido en él.
+			\item \textbf{getMaxNode(NodeAvl<E> node):} Método privado que encuentra el nodo máximo en el árbol AVL. Recibe un nodo y realiza un recorrido hacia la derecha hasta encontrar el nodo más a la derecha del subárbol.
+			\item \textbf{search(E data):} Busca un elemento en el árbol AVL. Utiliza el método privado searchNode para realizar la búsqueda.
+			\item \textbf{searchNode(NodeAvl<E> node, E data):} Método privado que realiza la búsqueda de un dato en el árbol AVL. Recibe un nodo y el dato a buscar. Realiza una comparación entre el dato y el dato del nodo actual y decide si debe buscar en el subárbol izquierdo o derecho. Si encuentra el dato, retorna verdadero; de lo contrario, retorna falso.
+			\item \textbf{height(NodeAvl<E> node):} Método privado que devuelve la altura de un
+		\end{itemize}		
+	\end{itemize}	
+		
+	\lstinputlisting[language=java, caption={Test.java},numbers=left,]{src/Ejercicio01/Test.java}
+	
+	\begin{itemize}
+		\item La clase Test contiene un método main que realiza las siguientes acciones:
+		\begin{itemize}
+			\item Crea un objeto Scanner para leer la entrada del usuario.
+			\item Crea un objeto TreeAVL<Integer> para almacenar los elementos del árbol AVL.
+			\item Lee una cadena de texto desde la entrada y la convierte en valores ASCII.
+			\item Inserta los valores en el árbol AVL.
+			\item Imprime un mensaje indicando que se va a dibujar el árbol.
+			\item Crea un objeto Graph utilizando GraphStream y configura propiedades visuales.
+			\item Visualiza el árbol AVL en el grafo.
+			\item Muestra el grafo en una ventana emergente.
+			\item Obtiene y muestra el valor mínimo del árbol AVL.
+			\item Obtiene y muestra el valor máximo del árbol AVL.
+			\item Realiza búsquedas en el árbol AVL y muestra los resultados.
+			\item Elimina un valor del árbol AVL.
+			\item Realiza otra búsqueda y muestra el resultado.
+		\end{itemize}
+		\item El método visualizeTree es un método auxiliar que visualiza recursivamente el árbol AVL en el grafo.
+	\end{itemize}
+	
+	\section{Preguntas}
+	\subsection{¿Explique como es el algoritmo que implementó para obtener el factor de equilibrio de un nodo?}
+	
+	\begin{itemize}
+		\item El algoritmo implementado para obtener el factor de equilibrio de un nodo en el árbol AVL se realiza de la siguiente manera:
+		
+		\begin{itemize}
+			\item En el método insertNode, después de insertar un nuevo nodo en el árbol AVL, se actualiza la altura del nodo actual. La altura se calcula como el máximo entre la altura de su subárbol izquierdo y su subárbol derecho, más 1.
+			\item A continuación, se obtiene el factor de equilibrio del nodo llamando al método getBalance. El factor de equilibrio se calcula restando la altura del subárbol derecho del nodo a la altura del subárbol izquierdo.
+			\item Si el factor de equilibrio es mayor que 1 y el valor a insertar es menor que el valor del nodo izquierdo, se realiza una rotación hacia la derecha en el nodo actual.
+			\item Si el factor de equilibrio es menor que -1 y el valor a insertar es mayor que el valor del nodo derecho, se realiza una rotación hacia la izquierda en el nodo actual.
+			\item Si el factor de equilibrio es mayor que 1 y el valor a insertar es mayor que el valor del nodo izquierdo, se realiza una rotación hacia la izquierda en el nodo izquierdo, seguida de una rotación hacia la derecha en el nodo actual.
+			\item Si el factor de equilibrio es menor que -1 y el valor a insertar es menor que el valor del nodo derecho, se realiza una rotación hacia la derecha en el nodo derecho, seguida de una rotación hacia la izquierda en el nodo actual.
+		\end{itemize}
+
+		\item El algoritmo para obtener el factor de equilibrio se aplica de manera similar en el método removeNode cuando se elimina un nodo del árbol AVL. Después de realizar la eliminación, se actualiza la altura del nodo actual y se calcula el factor de equilibrio. Se aplican las rotaciones correspondientes según el caso para mantener el equilibrio del árbol AVL.
+		\item Además, se utilizan los métodos rotateRight y rotateLeft para realizar las rotaciones hacia la derecha y hacia la izquierda, respectivamente, en los nodos del árbol AVL.
+		\item La clase TreeAVL también proporciona otros métodos como getMin, getMax y search para obtener el valor mínimo, valor máximo y realizar búsquedas en el árbol AVL, respectivamente. Estos métodos utilizan operaciones de comparación para recorrer el árbol y encontrar los valores deseados.
+		\item En resumen, el algoritmo para obtener el factor de equilibrio en un árbol AVL se basa en el cálculo de las alturas de los subárboles y la resta de estas alturas para determinar el equilibrio del nodo. Luego se aplican las rotaciones necesarias para mantener el equilibrio del árbol después de la inserción o eliminación de nodos.
+	\end{itemize}	
+
+	
+	\section{Conclusiones}
+	\begin{itemize}
+		\item La implementación de una cola de prioridad utilizando un heap proporciona un tiempo de ejecución eficiente para las operaciones de inserción y eliminación de elementos con mayor prioridad.
+		\item El uso de estructuras de datos genéricas y programación orientada a objetos permite crear implementaciones flexibles y reutilizables.
+		\item El diseño de clases y métodos bien encapsulados promueve un código limpio y mantenible.
+		\item La comprensión de las propiedades y operaciones del heap es fundamental para implementar correctamente una cola de prioridad.
+		\item En este ejercicio, se ha implementado una cola de prioridad utilizando un heap como estructura de datos subyacente. La implementación del heap permite realizar las operaciones de inserción, eliminación y acceso a los elementos con mayor y menor prioridad de manera eficiente. El uso de una clase genérica y la implementación de la interfaz Comparable proporcionan flexibilidad para trabajar con diferentes tipos de elementos y prioridades.
+		\item La implementación de una cola de prioridad basada en un heap es una estrategia poderosa y eficiente para resolver problemas que implican la gestión de elementos con diferentes niveles de prioridad. Al comprender los conceptos y técnicas presentadas en este ejercicio, se puede aplicar este conocimiento a una amplia gama de problemas en los que se requiere un manejo eficiente de la prioridad.
+		\item Informe a detalle en: 
+		\item \url {https://docs.google.com/document/d/1jAOoSbbO_PYWXzPXPUOXgS0euRT48e6vSWjYnETln9Y/edit?usp=sharing}
+
+	\end{itemize}
+	\section{Referencias}
+	\begin{itemize}
+		\item \url{https://www.geeksforgeeks.org/introduction-to-avl-tree/}
+		\item \url{https://www.geeksforgeeks.org/insertion-in-an-avl-tree/}
+		\item \url{https://www.geeksforgeeks.org/deletion-in-an-avl-tree/}
+		\item \url{https://www.javatpoint.com/avl-tree}
+		\item \url{https://docs.oracle.com/javase/tutorial/java/generics/types.html}
+		\item \url{https://algorithmtutor.com/Data-Structures/Tree/AVL-Trees/}
+	\end{itemize}	
+	
+\end{document}
