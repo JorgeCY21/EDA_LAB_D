@@ -1,7 +1,7 @@
 public class TrieNode {
 
-    private TrieNode[] children; 
-    private boolean isEndWord; 
+    private TrieNode[] children;
+    private boolean isEndWord;
 
     public TrieNode() {
         this.children = new TrieNode[128];
@@ -9,18 +9,19 @@ public class TrieNode {
     }
 
     public boolean isEndWord() {
-        return isEndWord;
+        return this.isEndWord;
     }
 
-    public void setEndWord(boolean endWord) {
-        isEndWord = endWord;
+    public void setIsEndWord(boolean isEndWord) {
+        this.isEndWord = isEndWord;
     }
 
     public TrieNode getChild(char c) {
-        return children[c];
+        return this.children[c];
     }
 
     public void setChild(char c, TrieNode node) {
-        children[c] = node;
+        this.children[c]= node;
     }
+
 }
