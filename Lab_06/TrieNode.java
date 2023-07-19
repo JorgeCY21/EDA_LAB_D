@@ -1,19 +1,19 @@
 public class TrieNode {
 
     private TrieNode[] children; 
-    private boolean isEndOfWord; 
+    private boolean isEndWord; 
 
     public TrieNode() {
         this.children = new TrieNode[128];
-        this.isEndOfWord = false;
+        this.isEndWord = false;
     }
 
-    public boolean isEndOfWord() {
-        return isEndOfWord;
+    public boolean isEndWord() {
+        return isEndWord;
     }
 
-    public void setEndOfWord(boolean endOfWord) {
-        isEndOfWord = endOfWord;
+    public void setEndWord(boolean endWord) {
+        isEndWord = endWord;
     }
 
     public TrieNode getChild(char c) {
