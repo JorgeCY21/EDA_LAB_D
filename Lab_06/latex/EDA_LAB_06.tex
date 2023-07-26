@@ -81,7 +81,7 @@
 \fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
 \fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
 \fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
-\fancyfoot[L]{Grupo Anime}
+\fancyfoot[L]{Grupo EDA}
 \fancyfoot[C]{\itemCourse}
 \fancyfoot[R]{Página \thepage}
 
@@ -234,18 +234,91 @@
  
 	
 	\section{Códigos Fuente}	
+	\begin{minipage}{\textwidth}	
+
+		\textbf{TrieNode: }
+		\lstinputlisting[language=java, caption={TrieNode}]{src/TrieNode.java}
+		En el primer fragmento de código se representa la clase TrieNode, el cual contiene un arreglo
+		de 255 elementos(estos representan el código ACCII). Observamos dos atributos. El primero
+		nos ayudará para conocer a al nodo siguiente, es decir, ayudara a la conexión con otros nodos para
+		representar palabras completas o prefijos. Y el segundo atributo nos ayuda a saber si es el final de la palabra.
+
+	\end{minipage}
+
+	\begin{minipage}{\textwidth}	
+
+		\textbf{Trie: }
+		\lstinputlisting[language=java, caption={Trie-insertar}, linerange={1-27}]{src/Trie.java}
+		En la primera sección del código Trie observamos Nodo raíz de nuestro Trie, despues dos constructores, 
+		el segundo constructor pide como parámetro texto el cual primero al texto lo dividiremos en palabras, 
+		esto haremos mediante la expresión regular "\textbackslash\textbackslash s+" para después con un foreach insertar las palabras en nuestro trie
+		\\El método para insertar una palabra en el Trie. Comienza desde el nodo raíz y recorre cada carácter de la palabra. 
+		Si el carácter no tiene un nodo hijo, se crea un nuevo nodo. Luego, se mueve al siguiente nodo hijo correspondiente al 
+		siguiente carácter. Al final de la palabra, marca el último nodo como un nodo de fin de palabra \(setIsEndWord(true)\) 
+		para indicar que se ha insertado una palabra completa.
 		
+		\end{minipage}
+		\clearpage
+		\lstinputlisting[language=java, caption={Trie-eliminación}, linerange={29-53}]{src/Trie.java}
+		El método recorre el Trie buscando el camino hacia la palabra a eliminar, almacenando los nodos visitados en el camino en un arreglo llamado parents. 
+		Si la palabra no existe en el Trie (es decir, no se encuentra el último nodo correspondiente al último carácter de la palabra), el método simplemente 
+		retorna sin hacer cambios. Si se encuentra la palabra, se marca el último nodo como no final de palabra, indicando que la palabra ha sido eliminada. 
+		A continuación, el método revisa los nodos en el camino hacia la palabra eliminada. Si un nodo no tiene hijos y no representa el final de otra palabra, 
+		se elimina del Trie.
+		
+		\lstinputlisting[language=java, caption={Trie-reemplazar, buscar y startswith}, linerange={55-83}]{src/Trie.java}
+		El método replace como su nombre lo dice reemplaza una palabra vieja en el Trie con una palabra nueva. Busca la palabra vieja, si la encuentra la elimina con delete, 
+		luego inserta la palabra nueva con insert. Este método solo se logra aplicando los otros métodos.
+		El método search comienza desde el nodo raíz y recorre cada carácter de la palabra (word) buscando el camino en el Trie. Si en algún punto no encuentra un nodo hijo 
+		correspondiente a un carácter, se detiene y devuelve false, lo que indica que la palabra no está presente en el Trie. Si encuentra todos los caracteres y llega a un nodo 
+		de fin de palabra, devuelve true, lo que indica que la palabra está presente en el Trie.
+		El método startswith se utiliza para verificar si alguna palabra en el Trie comienza con un cierto prefijo dado (prefix). Comienza desde el nodo raíz y recorre cada 
+		carácter del prefijo, buscando el camino en el Trie. Si en algún punto no encuentra un nodo hijo correspondiente a un carácter, se detiene y devuelve false, lo que 
+		indica que no hay palabras en el Trie que comiencen con ese prefijo.
 
+		\lstinputlisting[language=java, caption={Trie-reemplazar, buscar y startswith}, linerange={85-120}]{src/Trie.java}
+		Ya solo nos queda el método para verificar que este vacìo el trie, el cual solo recorre todas las referencias hasta llegar a null.
+		Y el método toString que nos ayudara a obtener una representación de todas las palabras del trie, esto gracias a setIsEndWord para saber
+		que palabras deberian ir o no.
+		\textbf{GUI: Todo el código realizado para la interfaz gráfica para el usuario}
+		\lstinputlisting[language=java, caption={Trie-eliminación}]{src/GUI.java}
+		\lstinputlisting[language=java, caption={Trie-eliminación}]{src/Page.java}
+		\lstinputlisting[language=java, caption={Trie-eliminación}]{src/PageBuscar.java}
+		\lstinputlisting[language=java, caption={Trie-eliminación}]{src/PageIrA.java}
+		\lstinputlisting[language=java, caption={Trie-eliminación}]{src/PageReemplazar.java}
+
+	\subsection{Ejecución y Pruebas}	
+	\begin{figure}[H]
+        \centering
+		Interfaz gráfica inicial, insertando texto.
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/GUI.jpg}
+    \end{figure}
+	\begin{figure}[H]
+        \centering
+		Ventana desplegable presionando el botón "buscar".
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/buscar1.jpg}
+    \end{figure}
+	\begin{figure}[H]
+        \centering
+		Cuadro de aviso avisando que la palabra fue encontrada.
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/buscar2.jpg}
+    \end{figure}
+	\begin{figure}[H]
+        \centering
+		Ventana desplegable presionando el botón "reemplazar".
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/reemplazar1.jpg}
+    \end{figure}
+	\begin{figure}[H]
+        \centering
+		Insertando texto a buscar y palabra con la cual reemplazar.
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/reemplazar2.jpg}
+    \end{figure}
+	\begin{figure}[H]
+        \centering
+		Texto reemplazado.
+        \includegraphics[width=2.5\textwidth,keepaspectratio]{img/reemplazar3.jpg}
+    \end{figure}
 	
-\subsection{Ejecución y Pruebas}	
-
-
-	\clearpage
-	
-	\subsection{Estructura de laboratorio 06}
-	\begin{itemize}	
-		\item El contenido que se entrega en este laboratorio es el siguiente:
-	\end{itemize}
 	
 \begin{lstlisting}[style=ascii-tree]
         
@@ -262,7 +335,9 @@ El Trie es especialmente útil para problemas relacionados con la búsqueda y re
 	\end{itemize}
 	\subsection{Pregunta: ¿Cómo realizó la funcionalidad de reemplazar texto?}
 	\begin{itemize}
-	\item  	
+	\item Realizamos la fucionalidad aplicando los métodos que anteriormente hemos implementado, primero con
+	search() se busco las cooincidencias, despues con delete() se eliminaron y se insertaron en su posición con insert
+	la nueva palabra.  	
 
 	
 	\end{itemize}		
