@@ -13,15 +13,14 @@ public class PlagiarismChecker {
                 String linea;
                 // Leer el archivo línea por línea
                 while ((linea = br.readLine()) != null) {
-                    System.out.println(linea);
+                    //System.out.println(linea);
                     docs.insert(linea);
-                    docs.toString();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        return false;
+        return true;
     }
     /*
      * 
